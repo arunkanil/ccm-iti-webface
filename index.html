@@ -22,6 +22,54 @@ Author URL: http://w3layouts.com
     .heading-font {
       font-family: 'Aclonica' !important;
     }
+
+    .modal {
+      display: block;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 10;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      max-width: 800px;
+      height: auto;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -55,8 +103,9 @@ Author URL: http://w3layouts.com
           <img src="assets/images/output-onlinepngtools (1).png" alt="Your logo" title="Your logo"
             style="height:60px;" /> C.C.M. PRIVATE I.T.I
         </a>
-        <button class="navbar-toggler" type="button" style="width:60px;" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" style="width:60px;" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon fa fa-bars"></span>
         </button>
 
@@ -198,7 +247,8 @@ Author URL: http://w3layouts.com
           <div class="three-grids-columns">
             <span class="fa fa-laptop"></span>
             <h4 class="heading-font">Highly Qualified Faculty</h4>
-            <p class="editContent">We have some of the most qualified personnel in their respective fields to educate and serve as mentors
+            <p class="editContent">We have some of the most qualified personnel in their respective fields to educate
+              and serve as mentors
               for the students and to help the students realize their true potential and channel their energy into
               something fruitful for their future.
             </p>
@@ -207,7 +257,8 @@ Author URL: http://w3layouts.com
           <div class="three-grids-columns">
             <span class="fa fa-users"></span>
             <h4 class="heading-font">Employment oriented</h4>
-            <p class="editContent">Our courses are more geared towards skills and technical know-how, so our students can have the upperhand
+            <p class="editContent">Our courses are more geared towards skills and technical know-how, so our students
+              can have the upperhand
               in their respective trade. We guarantee practical training so the students get more experience when they
               are ready to tackle the real world jobs that they will encounter.
             </p>
@@ -216,7 +267,8 @@ Author URL: http://w3layouts.com
           <div class="three-grids-columns">
             <span class="fa fa-book"></span>
             <h4 class="heading-font">Experience quality education</h4>
-            <p class="editContent">We provide the best in class education and services to our students, we have the infrastructure to
+            <p class="editContent">We provide the best in class education and services to our students, we have the
+              infrastructure to
               support and cater to all the needs of our students, our faculty and supporting staff are always ready to
               assist in every need of the students and help them become the best that they can be.
             </p>
@@ -374,9 +426,13 @@ Author URL: http://w3layouts.com
     </div>
   </section>
   <!-- // form-12 -->
-
-
-
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="assets/images/covid.jpg" class="img-responsive" alt="">
+    </div>
+  </div>
   <!-- specifications -->
   <section class="w3l-index2">
     <div class="main-w3 py-5" id="stats">
@@ -710,7 +766,22 @@ Author URL: http://w3layouts.com
     })
   </script>
   <!-- //script -->
-
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 </body>
 
 </html>
